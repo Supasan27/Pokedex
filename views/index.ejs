@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <style>
+      h1 {
+        color: yellow;
+        text-align: center;
+        font-weight: bold;
+      }
+      body {
+        background-color: black;
+      }
+      form {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        color: white;
+      }
+      .container {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h2 {
+        color: white;
+        text-align: center;
+      }
+      .container img {
+        height: 30%;
+        width: 30%;
+      }
+      label {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pokedex</h1>
+    <form action="/submit" method="post">
+      <label for="name">Name or ID</label>
+      <input type="text" id="name" name="name" />
+      <input type="submit" value="Search" />
+    </form>
+    <div class="container">
+      <h2><%=locals.name %></h2>
+      <%if(locals.image){%>
+      <img src="<%=image%>" alt="<%=name%>" />
+
+      <%}%>
+    </div>
+  </body>
+</html>
